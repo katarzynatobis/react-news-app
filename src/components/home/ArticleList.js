@@ -14,7 +14,7 @@ const ArticleListSection = styled.section`
 export const ArticleList = ({ articles, handleArticleClick }) => {
 
   return (
-    <ArticleListSection>
+    <ArticleListSection aria-label={"List of articles"}>
       {articles.map(article => (
         <ArticleBox
           key={Math.random()}

@@ -21,7 +21,7 @@ export const data = JSON.parse(`{
       "author": {
         "name": "Betty Egham",
         "email": "bettye@mail.mail",
-        "avatar": "begham.jpg"
+        "avatar": "https://images.unsplash.com/photo-1541943181603-d8fe267a5dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=80"
       }
     },
     {
@@ -40,7 +40,7 @@ export const data = JSON.parse(`{
       "author": {
         "name": "John Doe",
         "email": "johnd@mail.mail",
-        "avatar": "jdoe.jpg"
+        "avatar": "https://images.unsplash.com/photo-1541943181603-d8fe267a5dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=80"
       }
     },
     {
@@ -59,7 +59,7 @@ export const data = JSON.parse(`{
       "author": {
         "name": "Melissa Dall",
         "email": "melissad@mail.mail",
-        "avatar": "mdall.jpg"
+        "avatar": "https://images.unsplash.com/photo-1541943181603-d8fe267a5dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=80"
       }
     },
     {
@@ -78,7 +78,7 @@ export const data = JSON.parse(`{
       "author": {
         "name": "Betty Egham",
         "email": "bettye@mail.mail",
-        "avatar": "begham.jpg"
+        "avatar": "https://images.unsplash.com/photo-1541943181603-d8fe267a5dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=80"
       }
     },
     {
@@ -97,7 +97,7 @@ export const data = JSON.parse(`{
       "author": {
         "name": "John Doe",
         "email": "johnd@mail.mail",
-        "avatar": "jdoe.jpg"
+        "avatar": "https://images.unsplash.com/photo-1541943181603-d8fe267a5dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=80"
       }
     },
     {
@@ -116,7 +116,7 @@ export const data = JSON.parse(`{
       "author": {
         "name": "Melissa Dall",
         "email": "melissad@mail.mail",
-        "avatar": "mdall.jpg"
+        "avatar": "https://images.unsplash.com/photo-1541943181603-d8fe267a5dcf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=100&q=80"
       }
     }
   ]

@@ -1,9 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Tags } from "./Tags";
-import { HeroImage } from "./HeroImage";
+import { HeroImage } from "../common/HeroImage";
 import { ArticleList } from "./ArticleList";
 import { Article } from "../../utils/classes";
+import { visuallyHidden } from "../../utils/cssUtils";
+import styled from "styled-components";
+
+const VisuallyHiddenH2 = styled.h2`
+  ${visuallyHidden}
+`;
 
 export const HomePage = ({ articles, tags, handleArticleClick }) => {
   const heroImageIndex = Math.floor(Math.random() * articles.length);
@@ -11,6 +17,7 @@ export const HomePage = ({ articles, tags, handleArticleClick }) => {
     <>
       <Tags tags={tags} />
       <HeroImage imgSrc={articles[heroImageIndex].img} />
+      <VisuallyHiddenH2> List of articles </VisuallyHiddenH2>
       <ArticleList
         articles={articles}
         handleArticleClick={handleArticleClick}

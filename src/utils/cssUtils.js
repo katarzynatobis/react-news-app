@@ -19,6 +19,13 @@ export const hoverBackground = `
     opacity: 1;
   }`;
 
-  export const sectionPadding = `
+export const sectionPadding = `
     padding: 10px 0;
-  `
+  `;
+export const visuallyHidden = `
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+`;
