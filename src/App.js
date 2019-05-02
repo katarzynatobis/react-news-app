@@ -17,25 +17,30 @@ class App extends React.Component {
       displayedArticleID: undefined
     };
     this.tags = data.tags;
-    this.articles = data.articles.map(
-      article => new Article(article)
-    );
+    this.articles = data.articles.map(article => new Article(article));
   }
 
   handleBackToHome = () => {
     this.setState({ displayedArticleID: undefined });
   };
 
-  render() {
+  handleArticleClick = displayedArticleID => {
+    this.setState({ displayedArticleID });
+  };
 
+  render() {
     return (
       <AppContainer>
         <MainHeader
-          articleSelected={!!this.state.displayedArticle}
+          articleSelected={!!this.state.displayedArticleID}
           handleBackClick={this.handleBackToHome}
         />
         {!this.state.displayedArticleID ? (
-          <HomePage tags={this.tags} articles={this.articles} />
+          <HomePage
+            tags={this.tags}
+            articles={this.articles}
+            handleArticleClick={this.handleArticleClick}
+          />
         ) : (
           <div>{this.state.displayedArticleID}</div>
         )}

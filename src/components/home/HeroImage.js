@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const ImageWrapper = styled.div`
-  ${p => `background-image:url("${p.imgSrc}");`}
+  ${p => `background-image:url("${p.imgSrc}")`};
   background-position: center;
   background-size: cover;
   display: flex;

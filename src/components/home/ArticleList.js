@@ -2,19 +2,31 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Article } from "../../utils/classes";
 import styled from "styled-components";
-import {sectionPadding} from "../../utils/cssUtils";
+import { ArticleBox } from "./ArticleBox";
 
 const ArticleListSection = styled.section`
   display: flex;
-  ${sectionPadding}
+  flex-wrap: wrap;
+  margin: 0 -10px;
+  justify-content: space-between;
 `;
 
-export const ArticleList = ({ articles }) => (
-  <ArticleListSection>
-    {articles.map(article => article.title)}
-  </ArticleListSection>
-);
+export const ArticleList = ({ articles, handleArticleClick }) => {
+
+  return (
+    <ArticleListSection>
+      {articles.map(article => (
+        <ArticleBox
+          key={Math.random()}
+          article={article}
+          onClick={handleArticleClick}
+        />
+      ))}
+    </ArticleListSection>
+  );
+};
 
 ArticleList.propTypes = {
-  articles: PropTypes.arrayOf(PropTypes.instanceOf(Article)).isRequired
+  articles: PropTypes.arrayOf(PropTypes.instanceOf(Article)).isRequired,
+  handleArticleClick: PropTypes.func.isRequired
 };
