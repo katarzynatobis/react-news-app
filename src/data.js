@@ -1,4 +1,4 @@
-{
+export const data = JSON.parse(`{
   "tags": [
     "techDesign",
     "heatlthcare revolution",
@@ -16,8 +16,8 @@
         "Donec id molestie augue, blandit tincidunt erat. Vestibulum augue eros, commodo non dictum quis, lacinia quis augue. In commodo quam neque, sed posuere sapien fermentum eu. Proin sed mauris pellentesque, cursus augue sed, varius dui. Praesent facilisis a diam sagittis viverra. Etiam tempor pulvinar blandit. Ut interdum lacus et augue efficitur, a aliquam felis faucibus. Suspendisse nec mi eget sem laoreet elementum. Aliquam sodales malesuada efficitur. Aliquam consectetur consectetur dolor eget commodo. Quisque viverra et urna at porta.",
         "Vestibulum at porta nunc. Sed ornare lacus eu nibh ultrices, vel rhoncus orci pellentesque. Morbi lacinia lacus sed arcu pretium, quis mollis libero ultrices. In quis ex lectus. Nam vel neque pretium ligula mattis viverra. Vivamus semper nisi sit amet felis consequat, ut facilisis nunc convallis. Sed ornare, ex a placerat congue, massa mauris finibus nisl, eget interdum velit nisl id ligula. Mauris in lobortis lectus, in ullamcorper augue."
       ],
-      "img": "poverty.jpg",
-      "imgThumbnail": "poverty.jpg",
+      "img": "https://images.unsplash.com/photo-1523847027398-d3eb27914c67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&q=80&fit=crop&w=1000",
+      "imgThumbnail": "https://images.unsplash.com/photo-1523847027398-d3eb27914c67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&q=80&fit=crop&w=350",
       "author": {
         "name": "Betty Egham",
         "email": "bettye@mail.mail",
@@ -35,8 +35,8 @@
         "Donec id molestie augue, blandit tincidunt erat. Vestibulum augue eros, commodo non dictum quis, lacinia quis augue. In commodo quam neque, sed posuere sapien fermentum eu. Proin sed mauris pellentesque, cursus augue sed, varius dui. Praesent facilisis a diam sagittis viverra. Etiam tempor pulvinar blandit. Ut interdum lacus et augue efficitur, a aliquam felis faucibus. Suspendisse nec mi eget sem laoreet elementum. Aliquam sodales malesuada efficitur. Aliquam consectetur consectetur dolor eget commodo. Quisque viverra et urna at porta.",
         "Vestibulum at porta nunc. Sed ornare lacus eu nibh ultrices, vel rhoncus orci pellentesque. Morbi lacinia lacus sed arcu pretium, quis mollis libero ultrices. In quis ex lectus. Nam vel neque pretium ligula mattis viverra. Vivamus semper nisi sit amet felis consequat, ut facilisis nunc convallis. Sed ornare, ex a placerat congue, massa mauris finibus nisl, eget interdum velit nisl id ligula. Mauris in lobortis lectus, in ullamcorper augue."
       ],
-      "img": "politics.jpg",
-      "imgThumbnail": "politics.jpg",
+      "img": "https://images.unsplash.com/photo-1534598974068-2d51eda7628f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80",
+      "imgThumbnail": "https://images.unsplash.com/photo-1534598974068-2d51eda7628f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=350&q=80",
       "author": {
         "name": "John Doe",
         "email": "johnd@mail.mail",
@@ -54,8 +54,8 @@
         "Donec id molestie augue, blandit tincidunt erat. Vestibulum augue eros, commodo non dictum quis, lacinia quis augue. In commodo quam neque, sed posuere sapien fermentum eu. Proin sed mauris pellentesque, cursus augue sed, varius dui. Praesent facilisis a diam sagittis viverra. Etiam tempor pulvinar blandit. Ut interdum lacus et augue efficitur, a aliquam felis faucibus. Suspendisse nec mi eget sem laoreet elementum. Aliquam sodales malesuada efficitur. Aliquam consectetur consectetur dolor eget commodo. Quisque viverra et urna at porta.",
         "Vestibulum at porta nunc. Sed ornare lacus eu nibh ultrices, vel rhoncus orci pellentesque. Morbi lacinia lacus sed arcu pretium, quis mollis libero ultrices. In quis ex lectus. Nam vel neque pretium ligula mattis viverra. Vivamus semper nisi sit amet felis consequat, ut facilisis nunc convallis. Sed ornare, ex a placerat congue, massa mauris finibus nisl, eget interdum velit nisl id ligula. Mauris in lobortis lectus, in ullamcorper augue."
       ],
-      "img": "tech.jpg",
-      "imgThumbnail": "tech.jpg",
+      "img": "https://images.unsplash.com/photo-1504890001746-a9a68eda46e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80",
+      "imgThumbnail": "https://images.unsplash.com/photo-1504890001746-a9a68eda46e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=350&q=80",
       "author": {
         "name": "Melissa Dall",
         "email": "melissad@mail.mail",
@@ -63,4 +63,4 @@
       }
     }
   }
-}
+}`);
