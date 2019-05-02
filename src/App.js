@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import { HomePage } from "./components/home/HomePage";
+import "./assets/fontello/css/fontello.css";
+import { MainHeader } from "./components/common/MainHeader";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const AppContainer = styled.div`
+  padding: 20px;
+`;
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      displayedArticleID: undefined
+    };
+  }
+
+  handleBackToHome = () => {
+    this.setState({ displayedArticle: undefined });
+  };
+
+  render() {
+    return (
+      <AppContainer>
+        <MainHeader
+          articleSelected={!!this.state.displayedArticle}
+          handleBackClick={this.handleBackToHome}
+        />
+        {!this.state.displayedArticle ? (
+          <HomePage />
+        ) : (
+          <div>{this.state.displayedArticle}</div>
+        )}
+      </AppContainer>
+    );
+  }
 }
 
 export default App;
