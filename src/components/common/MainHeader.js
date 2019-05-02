@@ -27,7 +27,7 @@ export const MainHeader = ({ articleSelected, handleBackClick }) => (
         />
       ) : (
         <Button
-          onClick={noop}
+          onClick={() => noop()}
           iconClass={"icon-menu"}
           aria-label={"Hamburger Menu"}
         />

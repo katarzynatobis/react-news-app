@@ -24,7 +24,7 @@ const StyledImg = styled.img`
 export const HeroImage = ({ imgSrc, imgAlt }) => (
   <>
     <ImageWrapper imgSrc={imgSrc}>
-      <StyledImg src={imgSrc} alt={imgAlt ? imgAlt : ""} />
+      <StyledImg src={imgSrc} alt={imgAlt ? imgAlt : " "} />
     </ImageWrapper>
   </>
 );

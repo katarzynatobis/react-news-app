@@ -18,3 +18,7 @@ export const hoverBackground = `
   :hover::after {
     opacity: 1;
   }`;
+
+  export const sectionPadding = `
+    padding: 10px 0;
+  `

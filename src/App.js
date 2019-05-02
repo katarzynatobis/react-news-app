@@ -4,6 +4,7 @@ import { HomePage } from "./components/home/HomePage";
 import "./assets/fontello/css/fontello.css";
 import { MainHeader } from "./components/common/MainHeader";
 import { data } from "./data.js";
+import { Article } from "./utils/classes";
 
 const AppContainer = styled.div`
   padding: 20px;
@@ -15,7 +16,10 @@ class App extends React.Component {
     this.state = {
       displayedArticleID: undefined
     };
-    this.store = data;
+    this.tags = data.tags;
+    this.articles = data.articles.map(
+      article => new Article(article)
+    );
   }
 
   handleBackToHome = () => {
@@ -23,6 +27,7 @@ class App extends React.Component {
   };
 
   render() {
+
     return (
       <AppContainer>
         <MainHeader
@@ -30,7 +35,7 @@ class App extends React.Component {
           handleBackClick={this.handleBackToHome}
         />
         {!this.state.displayedArticleID ? (
-          <HomePage tags={this.store.tags} articles={this.store.articles}/>
+          <HomePage tags={this.tags} articles={this.articles} />
         ) : (
           <div>{this.state.displayedArticleID}</div>
         )}

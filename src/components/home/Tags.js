@@ -1,12 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { hoverBackground } from "../../utils/cssUtils";
+import { hoverBackground, sectionPadding } from "../../utils/cssUtils";
 
-const TagsContainer = styled.section`
-  overflow-x: auto;
-  padding: 10px 0;
-  white-space: nowrap;
+const MainWrapper = styled.section`
   position: relative;
 
   ::after {
@@ -15,13 +12,19 @@ const TagsContainer = styled.section`
     top: 0;
     right: 0;
     bottom: 0;
-    width: 40px;
+    width: 25px;
     background-image: linear-gradient(to right, transparent, white);
   }
 `;
 
+const TagsContainer = styled.div`
+  overflow-x: auto;
+  ${sectionPadding}
+  white-space: nowrap;
+`;
+
 const StyledTag = styled.a`
-  margin-left: 25px;
+  margin-right: 20px;
   text-transform: capitalize;
   padding: 5px;
   font-size: 14px;
@@ -33,11 +36,13 @@ const StyledTag = styled.a`
 `;
 
 export const Tags = ({ tags }) => (
-  <TagsContainer>
-    {tags.map(tag => (
-      <StyledTag src="#">{tag}</StyledTag>
-    ))}
-  </TagsContainer>
+  <MainWrapper>
+    <TagsContainer>
+      {tags.map(tag => (
+        <StyledTag key={tag} src="#">{tag}</StyledTag>
+      ))}
+    </TagsContainer>
+  </MainWrapper>
 );
 
 Tags.propTypes = {

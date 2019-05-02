@@ -4,8 +4,8 @@ export const data = JSON.parse(`{
     "heatlthcare revolution",
     "future"
   ],
-  "articles": {
-    "1": {
+  "articles": [
+    {
       "id": "1",
       "title": "Powerty To Empowerment In Chicago",
       "subtitle": "How one woman is transforming tle lives of underprivileged children in the inner city",
@@ -24,7 +24,7 @@ export const data = JSON.parse(`{
         "avatar": "begham.jpg"
       }
     },
-    "2": {
+    {
       "id": "2",
       "title": "Divided American Lives During War",
       "subtitle": "How one woman is transforming tle lives of underprivileged children in the inner city",
@@ -43,7 +43,7 @@ export const data = JSON.parse(`{
         "avatar": "jdoe.jpg"
       }
     },
-    "3": {
+    {
       "id": "3",
       "title": "The Future of gasoline",
       "subtitle": "How one woman is transforming tle lives of underprivileged children in the inner city",
@@ -62,5 +62,5 @@ export const data = JSON.parse(`{
         "avatar": "mdall.jpg"
       }
     }
-  }
+  ]
 }`);
