@@ -38,7 +38,6 @@ export class Button extends React.Component {
 
   handleClick = () => {
     this.setState({ clicked: true });
-    console.log("handle click");
     setTimeout(() => {
       this.props.onClick();
       this.setState({ clicked: false });
