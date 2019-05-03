@@ -53,45 +53,28 @@ const Author = styled.div`
   }
 `;
 
-export class ArticlePage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      imgEnlarged: false
-    };
-  }
-
-  render() {
-    const {
-      img,
-      category,
-      subcategory,
-      title,
-      subtitle,
-      author,
-      text
-    } = this.props.article;
-    return (
-      <>
-        <HeroImage imgSrc={img} />
-        <Categories>
-          {category} - {subcategory}
-        </Categories>
-        <Title>{title}</Title>
-        <SubTitle>{subtitle}</SubTitle>
-        <ArticleFooter>
-          <Avatar src={author.avatar} />
-          <Author>
-            by <a href={`mailto:${author.email}`}>{author.name}</a>
-          </Author>
-        </ArticleFooter>
-        {text.map(paragraph => (
-          <p>{paragraph}</p>
-        ))}
-      </>
-    );
-  }
-}
+export const ArticlePage = ({ article }) => {
+  const { img, category, subcategory, title, subtitle, author, text } = article;
+  return (
+    <>
+      <HeroImage imgSrc={img} />
+      <Categories>
+        {category} - {subcategory}
+      </Categories>
+      <Title>{title}</Title>
+      <SubTitle>{subtitle}</SubTitle>
+      <ArticleFooter>
+        <Avatar src={author.avatar} />
+        <Author>
+          by <a href={`mailto:${author.email}`}>{author.name}</a>
+        </Author>
+      </ArticleFooter>
+      {text.map(paragraph => (
+        <p key={paragraph.slice(0,5)}>{paragraph}</p>
+      ))}
+    </>
+  );
+};
 
 ArticlePage.propTypes = {
   article: PropTypes.instanceOf(Article).isRequired

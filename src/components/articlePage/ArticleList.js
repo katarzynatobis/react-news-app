@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Article } from "../../utils/classes";
 import styled from "styled-components";
-import { ArticleBox } from "./ArticleBox";
+import { ArticleBox } from "../home/ArticleBox";
 
 const ArticleListSection = styled.section`
   display: flex;
