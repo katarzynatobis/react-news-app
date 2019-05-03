@@ -23,27 +23,39 @@ const VisuallyHiddenH1 = styled.h1`
 `;
 
 export const MainHeader = ({ articleSelected, handleBackClick }) => (
-  <HeaderStyled>
-    <nav aria-label={"Main Navigation"}>
-      {articleSelected ? (
-        <Button
-          onClick={handleBackClick}
-          iconClass={"icon-left"}
-          aria-label={"Back to Home Page"}
-        />
-      ) : (
-        <Button
-          onClick={() => noop()}
-          iconClass={"icon-menu"}
-          aria-label={"Hamburger Menu"}
-        />
-      )}
-    </nav>
-    <Logo src={logo} />
-    <VisuallyHiddenH1>The Fortnightly</VisuallyHiddenH1>
-    <Button onClick={noop} iconClass={"icon-search"} aria-label={"Search"} />
-  </HeaderStyled>
-);
+         <HeaderStyled>
+           <nav aria-label={"Main Navigation"}>
+             {articleSelected ? (
+               <Button
+                 onClick={handleBackClick}
+                 iconClass={"icon-left"}
+                 aria-label={"Back to Home Page"}
+               />
+             ) : (
+               <Button
+                 onClick={() => noop()}
+                 iconClass={"icon-menu"}
+                 aria-label={"Hamburger Menu"}
+               />
+             )}
+           </nav>
+           <Logo src={logo} />
+           <VisuallyHiddenH1>The Fortnightly</VisuallyHiddenH1>
+           {articleSelected ? (
+             <Button
+               onClick={() => noop()}
+               iconClass={"icon-share"}
+               aria-label={"Share"}
+             />
+           ) : (
+             <Button
+               onClick={() => noop()}
+               iconClass={"icon-search"}
+               aria-label={"Search"}
+             />
+           )}
+         </HeaderStyled>
+       );
 
 MainHeader.propTypes = {
   handleBackClick: PropTypes.func.isRequired,

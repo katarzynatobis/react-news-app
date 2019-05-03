@@ -12,7 +12,7 @@ export const hoverBackground = `
     background-color: #ddd;
     opacity: 0;
     z-index: -1;
-    transition: opacity 300ms ease;
+    transition: opacity 300ms ease-in-out;
   }
 
   :hover::after {

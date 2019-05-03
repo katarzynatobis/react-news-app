@@ -15,7 +15,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayedArticleID: "1"
+      displayedArticleID: undefined
     };
     this.tags = data.tags;
     this.articles = data.articles.map(article => new Article(article));
@@ -30,7 +30,11 @@ class App extends React.Component {
   };
 
   render() {
-    const articleToDisplay = this.state.displayedArticleID && this.articles.find(article => article.id === this.state.displayedArticleID);
+    const articleToDisplay =
+      this.state.displayedArticleID &&
+      this.articles.find(
+        article => article.id === this.state.displayedArticleID
+      );
     return (
       <AppContainer>
         <MainHeader
@@ -44,7 +48,7 @@ class App extends React.Component {
             handleArticleClick={this.handleArticleClick}
           />
         ) : (
-          <ArticlePage article={articleToDisplay}/>
+          <ArticlePage article={articleToDisplay} />
         )}
       </AppContainer>
     );

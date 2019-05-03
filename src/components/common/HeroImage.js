@@ -13,7 +13,7 @@ const ImageWrapper = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  transition: all 1s ease;
+  transition: all 500ms ease-out;
   background: rgba(255, 255, 255, 0.7);
   height: 100%;
   width: 100%;
@@ -29,6 +29,7 @@ const ImageContainer = styled.div`
     width: 100vw;
     margin-left: -20px;
     margin-right: -20px;
+    transition-timing-function: ease-in;
 
     & img {
       transform: translateY(-35px);
@@ -39,11 +40,10 @@ const ImageContainer = styled.div`
 const StyledImg = styled.img`
   width: 100%;
   height: auto;
-  transition: all 1s ease;
+  transition: transform 500ms ease;
 `;
 
 export class HeroImage extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -56,10 +56,7 @@ export class HeroImage extends React.Component {
   render() {
     const { imgSrc, imgAlt } = this.props;
     return (
-      <ImageWrapper
-        imgSrc={imgSrc}
-        onClick={this.handleClick}
-      >
+      <ImageWrapper imgSrc={imgSrc} onClick={this.handleClick}>
         <ImageContainer className={this.state.imgEnlarged ? "big-img" : ""}>
           <StyledImg src={imgSrc} alt={imgAlt ? imgAlt : " "} />
         </ImageContainer>

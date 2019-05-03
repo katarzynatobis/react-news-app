@@ -4,6 +4,17 @@ import { Article } from "../../utils/classes";
 import { HeroImage } from "../common/HeroImage";
 import styled from "styled-components";
 
+const ArticleWrapper = styled.article`
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 300ms ease-out;
+
+  &.mounted {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 const Categories = styled.div`
   text-transform: uppercase;
   font-weight: 700;
@@ -53,28 +64,50 @@ const Author = styled.div`
   }
 `;
 
-export const ArticlePage = ({ article }) => {
-  const { img, category, subcategory, title, subtitle, author, text } = article;
-  return (
-    <>
-      <HeroImage imgSrc={img} />
-      <Categories>
-        {category} - {subcategory}
-      </Categories>
-      <Title>{title}</Title>
-      <SubTitle>{subtitle}</SubTitle>
-      <ArticleFooter>
-        <Avatar src={author.avatar} />
-        <Author>
-          by <a href={`mailto:${author.email}`}>{author.name}</a>
-        </Author>
-      </ArticleFooter>
-      {text.map(paragraph => (
-        <p key={paragraph.slice(0,5)}>{paragraph}</p>
-      ))}
-    </>
-  );
-};
+export class ArticlePage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mounted: false
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => this.setState({ mounted: true }), 200);
+  }
+
+  render() {
+    const {
+      img,
+      category,
+      subcategory,
+      title,
+      subtitle,
+      author,
+      text
+    } = this.props.article;
+
+    return (
+      <ArticleWrapper className={this.state.mounted ? "mounted" : ""}>
+        <HeroImage imgSrc={img} />
+        <Categories>
+          {category} - {subcategory}
+        </Categories>
+        <Title>{title}</Title>
+        <SubTitle>{subtitle}</SubTitle>
+        <ArticleFooter>
+          <Avatar src={author.avatar} />
+          <Author>
+            by <a href={`mailto:${author.email}`}>{author.name}</a>
+          </Author>
+        </ArticleFooter>
+        {text.map(paragraph => (
+          <p key={paragraph.slice(0, 5)}>{paragraph}</p>
+        ))}
+      </ArticleWrapper>
+    );
+  }
+}
 
 ArticlePage.propTypes = {
   article: PropTypes.instanceOf(Article).isRequired
