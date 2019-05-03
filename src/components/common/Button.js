@@ -14,6 +14,7 @@ const ButtonStyled = styled.button`
   text-align: center;
   border: none;
   font-size: 16px;
+  overflow: hidden;
   ${hoverBackground}
 `;
 
