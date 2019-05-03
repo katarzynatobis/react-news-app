@@ -17,13 +17,43 @@ const ButtonStyled = styled.button`
   ${hoverBackground}
 `;
 
-export const Button = ({ iconClass, ...rest }) => {
-  return (
-    <ButtonStyled {...rest}>
-      <i className={iconClass} />
-    </ButtonStyled>
-  );
-};
+const IStyled = styled.i`
+  display: inline-block;
+  transition: transform 0ms ease-in-out;
+
+  &.clicked {
+    transform: rotate(360deg);
+    transition-duration: 300ms;
+  }
+`;
+
+export class Button extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      clicked: false
+    };
+  }
+
+  handleClick = () => {
+    this.setState({ clicked: true });
+    console.log("handle click");
+    setTimeout(() => {
+      this.props.onClick();
+      this.setState({ clicked: false });
+    }, 350);
+  };
+
+  render() {
+    const { iconClass, onClick, className, ...rest } = this.props;
+    const clickedClassName = this.state.clicked ? " clicked" : "";
+    return (
+      <ButtonStyled onClick={this.handleClick} {...rest}>
+        <IStyled className={iconClass + clickedClassName} />
+      </ButtonStyled>
+    );
+  }
+}
 
 Button.propTypes = {
   iconClass: PropTypes.string.isRequired,
