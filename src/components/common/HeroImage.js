@@ -5,7 +5,7 @@ import styled from "styled-components";
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
-  height: 200px;
+  height: 170px;
 
   @media screen and (min-width: 800px) {
     height: 400px;

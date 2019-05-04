@@ -12,11 +12,10 @@ const VisuallyHiddenH2 = styled.h2`
 `;
 
 export const HomePage = ({ articles, tags, handleArticleClick }) => {
-  const heroImageIndex = Math.floor(Math.random() * articles.length);
   return (
     <>
       <Tags tags={tags} />
-      <HeroImage imgSrc={articles[heroImageIndex].img} />
+      <HeroImage imgSrc={articles[0].img} />
       <VisuallyHiddenH2> List of articles </VisuallyHiddenH2>
       <ArticleList
         articles={articles}

@@ -3,20 +3,6 @@ import PropTypes from "prop-types";
 import { Article } from "../../utils/classes";
 import styled from "styled-components";
 
-const ArticleWrapper = styled.article`
-  margin: 5px 10px;
-  width: 100%;
-  height: 150px;
-
-  @media screen and (min-width: 800px) {
-    width: calc(50% - 20px);
-  }
-
-  @media screen and (min-width: 1200px) {
-    width: calc(33.33% - 20px);
-  }
-`;
-
 const ArtButton = styled.button`
   width: 100%;
   height: 100%;
@@ -61,6 +47,7 @@ const Subcategory = styled.p`
   text-transform: uppercase;
   font-weight: 700;
   font-size: 14px;
+  margin-top: 0;
 `;
 
 const HrStyled = styled.hr`
@@ -70,7 +57,33 @@ const HrStyled = styled.hr`
 `;
 
 const H3ArticleTitle = styled.h3`
-  font-size: 20px;
+  font-size: 18px;
+  margin: 10px 0;
+`;
+
+const ArticleWrapper = styled.article`
+  margin: 5px 10px;
+  width: 100%;
+  height: 150px;
+
+  &:first-child {
+    & ${H3ArticleTitle} {
+      font-size: 22px;
+      margin-right: 20px;
+    }
+
+    & ${ImgThumbnail} {
+      width: 0px;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    width: calc(50% - 20px);
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc(33.33% - 20px);
+  }
 `;
 
 export const ArticleBox = ({ article, onClick }) => {
